@@ -32,7 +32,7 @@ function fibonacciIterative($order) {
  * Recursive solution.
  */
 function fibonacciRecursive($order, $output = array()) {
-    // Set first levels if not set.
+    // @TODO add static caching.
     if ($order < 0) {
         return NULL;
     }
@@ -51,7 +51,6 @@ function fibonacciRecursive($order, $output = array()) {
         }
         $count = count($output);
         $output[] = $output[$count-1] + $output[$count-2];
-
         if ($order > count($output)) {
             return fibonacciRecursive($order, $output);
         }
