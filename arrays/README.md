@@ -15,3 +15,5 @@ Implements algorithms of rotation of array with next boundaries.
 N - steps to iterate.
 K - length of input array.
 ```
+It means that if array `[1, 2, 3, 4, 5]` is rotated by `2` elements left it would
+look as `[3, 4, 5, 1, 2]`.
