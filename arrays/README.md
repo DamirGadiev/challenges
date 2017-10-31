@@ -18,3 +18,9 @@ K - length of input array.
 ```
 It means that if array `[1, 2, 3, 4, 5]` is rotated by `2` elements left it would
 look as `[3, 4, 5, 1, 2]`.
+
+Represents 3 ways:
+
+- Use default php functions to get slice of array, and then swap them.
+- Use iterative method of moving each item.
+- Use reverse array method.
