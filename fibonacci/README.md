@@ -1,4 +1,4 @@
-### Fibonacci sequence ###
+# Fibonacci sequence #
 
 This section contains three ways of Fibonacci sequence calculation.
 

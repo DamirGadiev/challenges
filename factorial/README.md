@@ -1,4 +1,4 @@
-### Factorial ###
+# Factorial #
 
 This section contains three ways of factorial calculation.
 
