@@ -9,7 +9,10 @@ Small repository containing basic trainings with description. Made for self-lear
 
 ## OOP ##
 
-TODO
+TODO. Suggested sections:
+ - Patterns
+ - SOLID
+ - Late static binding.
 
 ## Sorting ##
 

@@ -9,6 +9,7 @@
 
 /**
  * Rotation using temporary array.
+ * Slice array and swap parts.
  */
 function leftRotationTempArray($input, $steps) {
     $start = array_slice($input, 0, $steps);
@@ -18,6 +19,7 @@ function leftRotationTempArray($input, $steps) {
 
 /**
  * Iterative rotation.
+ * Idea is in taking each element one by one and move it along the input.
  */
 function leftRotationIterations($input, $steps) {
     $length = count($input);
@@ -28,6 +30,37 @@ function leftRotationIterations($input, $steps) {
         }
         $input[$j] = $temp;
     }
+    return $input;
+}
+
+/**
+ * Helper function to reverse array.
+ */
+function _leftRotationReverseArray(&$input, $start, $end) {
+    $temp = NULL;
+    while ($start < $end) {
+        $temp = $input[$start];
+        $input[$start] = $input[$end];
+        $input[$end] = $temp;
+        $start++;
+        $end--;
+    }
+}
+
+/**
+ * Reverse iteration rotation.
+ * Idea is to divide array to sub-arrays and reverse each other and reverse all.
+ * generic array_reverse could be used.
+ */
+function leftRotationReverseIterations($input, $steps) {
+    $length = count($input);
+    // Reverse first part.
+    _leftRotationReverseArray($input, 0, $steps - 1);
+    // Reverse second part.
+    _leftRotationReverseArray($input, $steps, $length - 1);
+    // Reverse whole array.
+    _leftRotationReverseArray($input, 0, $length - 1);
+
     return $input;
 }
 
@@ -49,3 +82,9 @@ $result = leftRotationIterations($input, $steps);
 $end = microtime(TRUE) - $start;
 $output = "[" . implode(", ", $result) . "]";
 echo "Left rotation using iteration: $output. Time: $end sec.\n";
+
+$start = microtime(TRUE);
+$result = leftRotationReverseIterations($input, $steps);
+$end = microtime(TRUE) - $start;
+$output = "[" . implode(", ", $result) . "]";
+echo "Left rotation using reverse: $output. Time: $end sec.\n";
